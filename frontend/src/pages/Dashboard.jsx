@@ -2,6 +2,7 @@
 import React from 'react';
 import '../css/Dashboard.css';
 import Header from '../components/Header.jsx'
+import Footer from '../components/Footer.jsx';
 
 export const Dashboard = () => {
     return (
@@ -16,6 +17,8 @@ export const Dashboard = () => {
                     allowFullScreen="true">
                 </iframe>
             </div>
+            <Footer />
+
         </>
     );
 }

@@ -268,3 +268,9 @@
   color: #fff;
   border: none;
   }
+
+  .img-fluid{
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+  }

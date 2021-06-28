@@ -1,6 +1,4 @@
-import Navbar from 'react-bootstrap/Navbar';
 import React, { useState, useCallback, useEffect } from 'react';
-import { Container } from 'react-bootstrap';
 import Login from './Login.jsx';
 import { Link } from 'react-router-dom';
 import { SideBarData } from './SideBarData.jsx';
@@ -37,8 +35,8 @@ const Header = ({ openModalLogin, closeModalLogin }) => {
                 ''
             )}
 
-            <Navbar className="NavBar">
-                <Container>
+            <div className="NavBar">
+                <div className="container">
                     <div>
                         <Link to="#" className="menu-bars">
                             <i className="fa fa-bars" onClick={showSidebar} />
@@ -64,14 +62,15 @@ const Header = ({ openModalLogin, closeModalLogin }) => {
                         </ul>
                     </nav>
 
-                    <span className="logo">
-                        <Link to="/home" style={{ textDecoration: 'none' }}>
-                            Tarefas.io
-                        </Link>
-                    </span>
+
+                    <Link to="/home" style={{ textDecoration: 'none' }}>
+                        <h1 className="logo">Tarefas.io</h1>
+                    </Link>
+
                     <button className='btn btn-light' onClick={handleOpenModal}>Login</button>
-                </Container>
-            </Navbar>
+                </div>
+
+            </div>
         </>
     );
 };
