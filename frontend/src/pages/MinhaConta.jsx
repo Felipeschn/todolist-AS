@@ -8,7 +8,8 @@ export const MinhaConta = () => {
         <>
             <Header />
             <div className="account">
-                <h2>Minha COnta</h2>
+                <h1>Minha Conta</h1>
+                <hr></hr>
             </div>
             <Footer />
         </>
