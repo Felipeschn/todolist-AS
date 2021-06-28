@@ -15,7 +15,7 @@ const Header = ({ openModalLogin, closeModalLogin }) => {
         } else {
             setOpenModal(false)
         }
-    },[openModalLogin])
+    }, [openModalLogin])
 
     const handleOpenModal = useCallback(() => {
         setOpenModal(true);
@@ -64,11 +64,11 @@ const Header = ({ openModalLogin, closeModalLogin }) => {
                         </ul>
                     </nav>
 
-                    <h1 className="logo">
+                    <span className="logo">
                         <Link to="/home" style={{ textDecoration: 'none' }}>
                             Tarefas.io
                         </Link>
-                    </h1>
+                    </span>
                     <button className='btn btn-light' onClick={handleOpenModal}>Login</button>
                 </Container>
             </Navbar>

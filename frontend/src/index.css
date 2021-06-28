@@ -1,11 +1,18 @@
-* {
+  * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
       'Lucida Sans', Arial, sans-serif;
   }
-  
+  a:hover{
+    color: #fff;
+  }
+
+  a{
+    color: #fff;
+  }
+
   body {
     background: linear-gradient(
       90deg,
@@ -29,22 +36,22 @@
     border-radius: 10px;
     padding-bottom: 32px;
   }
-  
+
   h1 {
     margin: 32px 0;
     color: #fff;
     font-size: 24px;
   }
-  
+
   .complete {
     text-decoration: line-through;
     opacity: 0.4;
   }
-  
+
   .todo-form {
     margin-bottom: 32px;
   }
-  
+
   .todo-input {
     padding: 14px 32px 14px 16px;
     border-radius: 4px 0 0 4px;
@@ -54,11 +61,11 @@
     background: transparent;
     color: #fff;
   }
-  
+
   .todo-input::placeholder {
     color: #e2e2e2;
   }
-  
+
   .todo-button {
     padding: 16px;
     border: none;
@@ -73,11 +80,11 @@
     color: #fff;
     text-transform: capitalize;
   }
-  
+
   .todo-input.edit {
     border: 2px solid #149fff;
   }
-  
+
   .todo-button.edit {
     background: linear-gradient(
       90deg,
@@ -92,7 +99,7 @@
     flex-direction: row;
     position: relative;
   }
-  
+
   .todo-row {
     display: flex;
     justify-content: space-between;
@@ -104,12 +111,12 @@
       rgba(255, 118, 20, 1) 0%,
       rgba(255, 84, 17, 1) 100%
     );
-  
+
     padding: 16px;
     border-radius: 5px;
     width: 90%;
   }
-  
+
   .todo-row:nth-child(4n + 1) {
     background: linear-gradient(
       90deg,
@@ -117,7 +124,7 @@
       rgba(155, 0, 250, 1) 100%
     );
   }
-  
+
   .todo-row:nth-child(4n + 2) {
     background: linear-gradient(
       90deg,
@@ -125,7 +132,7 @@
       rgba(250, 0, 135, 1) 100%
     );
   }
-  
+
   .todo-row:nth-child(4n + 3) {
     background: linear-gradient(
       90deg,
@@ -133,37 +140,24 @@
       rgba(17, 122, 255, 1) 100%
     );
   }
-  
+
   .icons {
     display: flex;
     align-items: center;
     font-size: 24px;
     cursor: pointer;
   }
-  
+
   .delete-icon {
     margin-right: 5px;
     color: #fff;
   }
-  
+
   .edit-icon {
     color: #fff;
   }
 
-  .btn.btn-light{
-    background: linear-gradient(
-        90deg,
-        rgba(93, 12, 255, 1) 0%,
-        rgba(155, 0, 250, 1) 100%
-      );
-    border: none;
-    border-radius: 0 4px 4px 0;
-    padding: 16px;
-    color: #fff;
-    border-radius: 4px;
-    justify-content: end;
-  }
-  
+
   .button-comecar{
     background: linear-gradient(
         90deg,
@@ -180,7 +174,7 @@
     font-size: x-large;
   }
 
-   .header__bg {
+  .header__bg {
     position: absolute;
     height: 300px;
     background-image: linear-gradient(#ff9d2f, #ff6126);
@@ -217,25 +211,21 @@
     justify-content: end;
   }
 
-#modalLogin{
+  #modalLogin{
   background: #161a2b;
   color: #fff;
   text-decoration: none;
-}
+  }
 
-button[type="submit"]{
+  button[type="submit"]{
   background: linear-gradient(
         90deg,
         rgba(93, 12, 255, 1) 0%,
         rgba(155, 0, 250, 1) 100%
       );
-}
-.logo{
-  text-align: start;
-  justify-content: flex-start;
-}
+  }
 
-.sidebar {
+  .sidebar {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -244,8 +234,8 @@ button[type="submit"]{
   z-index: 100;
   padding: 48px 0 0;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-}
-#sidebar-wrapper{
+  }
+  #sidebar-wrapper{
   min-height: 100vh !important;
   width: 100vw;
   margin-left: -1rem;
@@ -253,13 +243,28 @@ button[type="submit"]{
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
-}
-#sidebar-wrapper .sidebar-heading {
+  }
+  #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
   font-size: 1.2rem;
-}
+  }
 
-#page-content-wrapper {
+  #page-content-wrapper {
   min-width: 0;
   width: 100%;
-}
+  }
+
+  .nav.nav-tabs{
+  border-color: #5d0cff;
+  }
+  .nav.nav-tabs a{
+  color: #fff;
+  width: 50%;
+
+  }
+
+  .nav-item.nav-link.active{
+  background-color: #5d0cff;
+  color: #fff;
+  border: none;
+  }
