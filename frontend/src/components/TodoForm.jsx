@@ -1,41 +1,41 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
+import Api from '../api.js';
 
 function TodoForm(props) {
-    const [input, setInput] = useState(props.edit ? props.edit.value : '');
+    const [input, setInput] = useState("");
 
-    const inputRef = useRef(null);
+    const user = ('1');
 
-    useEffect(() => {
-        inputRef.current.focus();
-    });
-
-    const handleChange = e => {
-        setInput(e.target.value);
+    const addTarefa = () => {
+        Api.post("/Tarefas", {
+            NomeTarefa: input,
+            FkIdUser: user,
+        }).then(() => {
+            console.log("sucesso");
+        });
     };
 
-    const handleSubmit = e => {
-        e.preventDefault();
-
-        props.onSubmit({
-            id: Math.floor(Math.random() * 10000),
-            text: input
+    const alteraTarefa = () => {
+        Api.put("/Tarefas", {
+            id: props.edit.id,
+            NomeTarefa: input,
+        }).then(() => {
+            console.log("Alterado com Sucesso")
         });
-        setInput('');
     };
 
     return (
-        <form onSubmit={handleSubmit} className='todo-form'>
+        <form className='todo-form'>
             {props.edit ? (
                 <>
                     <input
                         placeholder='Atualizar Tarefa'
                         value={input}
-                        onChange={handleChange}
                         name='text'
-                        ref={inputRef}
                         className='todo-input edit'
+                        onChange={(event) => { setInput(event.target.value) }}
                     />
-                    <button onClick={handleSubmit} className='todo-button edit'>
+                    <button onClick={alteraTarefa} className='todo-button edit'>
                         Atualizar
                     </button>
                 </>
@@ -44,13 +44,12 @@ function TodoForm(props) {
                     <input
                         placeholder='Adicionar Tarefa'
                         value={input}
-                        onChange={handleChange}
                         name='text'
                         className='todo-input'
-                        ref={inputRef}
+                        onChange={(event) => { setInput(event.target.value) }}
                     />
 
-                    <button onClick={handleSubmit} className='todo-button'>
+                    <button onClick={addTarefa} className='todo-button'>
                         <i className="fa fa-plus-circle" style={{ fontSize: '20px' }} />
                     </button>
                 </>

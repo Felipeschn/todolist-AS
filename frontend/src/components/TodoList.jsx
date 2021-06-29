@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
-import Axios from 'axios';
+import Api from '../api.js';
 
 
 import { Tabs, Tab } from 'react-bootstrap';
@@ -10,7 +10,7 @@ function TodoList() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:5001/Tarefas").then((response) => {
+    Api.get("/Tarefas").then((response) => {
       setTodos(response.data)
     });
   }, [])

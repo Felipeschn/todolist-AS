@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import { RiCheckboxCircleFill } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
+import Api from '../api.js';
 
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     const [edit, setEdit] = useState({
@@ -21,21 +22,29 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
         return <TodoForm edit={edit} onSubmit={submitUpdate} />;
     }
 
+    const concluiTarefa = (todo) => {
+        Api.post("/Tarefa", {
+            id: todo.PkCodTarefa,
+        }).then(() => {
+            console.log("Alterado com Sucesso")
+        });
+    };
+
     return todos.map((todo, index) => (
         <div
             className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
             key={index}
         >
-            <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+            <div key={todo.PkCodTarefa} onClick={() => completeTodo(todo.PkCodTarefa)}>
                 {todo.nomeTarefa}
             </div>
             <div className='icons'>
                 <RiCheckboxCircleFill
-                    onClick={() => removeTodo(todo.id)}
+                    onClick={() => concluiTarefa(todo)}
                     className='concluido-icon'
                 />
                 <TiEdit
-                    onClick={() => setEdit({ id: todo.id, value: todo.nomeTarefa })}
+                    onClick={() => setEdit({ id: todo.PkCodTarefa, value: todo.nomeTarefa })}
                     className='edit-icon'
                 />
             </div>
