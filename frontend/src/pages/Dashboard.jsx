@@ -9,16 +9,9 @@ export const Dashboard = () => {
         <>
             <Header />
             <div className="dashboard">
-                <iframe
-                    width="800"
-                    height="500"
-                    src="https://app.powerbi.com/view?r=eyJrIjoiNTViMGI4MmItZjQ4NC00MjExLWJlNzctYjRiMzkwNWMzNmNhIiwidCI6ImVjYTU0MTY5LTc0ZGYtNDIwZS1iNTViLWI2ODNlNjJlYTI5ZCJ9&pageName=ReportSection"
-                    frameborder="0"
-                    allowFullScreen="true">
-                </iframe>
+                <iframe width="100%" height="600px" src="https://app.powerbi.com/view?r=eyJrIjoiN2Y1ZWQ3OTgtNDQ5Yy00YjUyLTgxMWMtNGFlZjkzMzQ1OTA5IiwidCI6ImVjYTU0MTY5LTc0ZGYtNDIwZS1iNTViLWI2ODNlNjJlYTI5ZCJ9" frameborder="0" allowFullScreen="true"></iframe>
             </div>
             <Footer />
-
         </>
     );
 }

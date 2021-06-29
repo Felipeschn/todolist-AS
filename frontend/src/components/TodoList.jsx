@@ -57,6 +57,12 @@ function TodoList() {
           />
         </Tab>
         <Tab eventKey="historico" title="Historico">
+          <Todo
+            todos={todos}
+            completeTodo={completeTodo}
+            removeTodo={removeTodo}
+            updateTodo={updateTodo}
+          />
         </Tab>
       </Tabs>
 

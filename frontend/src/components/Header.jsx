@@ -28,7 +28,6 @@ const Header = ({ openModalLogin, closeModalLogin }) => {
                     open={openModal}
                     handleClose={() => {
                         setOpenModal(false);
-                        closeModalLogin();
                     }}
                 />
             ) : (
