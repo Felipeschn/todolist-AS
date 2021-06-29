@@ -10,16 +10,8 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
         value: ''
     });
 
-    const submitUpdate = value => {
-        updateTodo(edit.id, value);
-        setEdit({
-            id: null,
-            value: ''
-        });
-    };
-
     if (edit.id) {
-        return <TodoForm edit={edit} onSubmit={submitUpdate} />;
+        return <TodoForm edit={edit} />;
     }
 
     const concluiTarefa = (todo) => {
@@ -35,7 +27,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
             className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
             key={index}
         >
-            <div key={todo.PkCodTarefa} onClick={() => completeTodo(todo.PkCodTarefa)}>
+            <div key={todo.id}>
                 {todo.nomeTarefa}
             </div>
             <div className='icons'>
@@ -44,7 +36,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
                     className='concluido-icon'
                 />
                 <TiEdit
-                    onClick={() => setEdit({ id: todo.PkCodTarefa, value: todo.nomeTarefa })}
+                    onClick={() => setEdit({ id: todo.pkCodTarefa, value: todo.nomeTarefa })}
                     className='edit-icon'
                 />
             </div>

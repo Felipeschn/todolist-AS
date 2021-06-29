@@ -1,25 +1,37 @@
 import React, { useState } from 'react';
 import Api from '../api.js';
 
+
 function TodoForm(props) {
     const [input, setInput] = useState("");
+
+
 
     const addTarefa = async () => {
         await Api.post("/Tarefas", {
             nomeTarefa: input,
-            dataTarefa: '2021-06-29',
+            dataTarefa: new Date(),
             concluido: false,
             importancia: 0,
             fkIdUser: 1
         });
     };
 
-    const alteraTarefa = async () => {
-        await Api.put("/Tarefas", {
-            id: props.edit.id,
-            NomeTarefa: input,
+    const alteraTarefa = async (id) => {
+        await Api.put(`/Tarefas/v1/tarefa/${id}`, {
+            nomeTarefa: input,
+            dataTarefa: new Date(),
+            concluido: false,
+            importancia: 0,
+            fkIdUser: 1
+        }).then((re) => {
+            console.log(re);
         });
     };
+
+    /*const deletaTarefa = async (id) => {
+        await Api.delete(`/Tarefas/v1/tarefa/${id}`)
+    }*/
 
     return (
         <form className='todo-form'>
@@ -28,11 +40,11 @@ function TodoForm(props) {
                     <input
                         placeholder='Atualizar Tarefa'
                         value={input}
-                        name='NomeTarefa'
+                        name='text'
                         className='todo-input edit'
                         onChange={event => { setInput(event.target.value) }}
                     />
-                    <button onClick={alteraTarefa} className='todo-button edit'>
+                    <button onClick={() => alteraTarefa(props.edit.id)} className='todo-button edit'>
                         Atualizar
                     </button>
                 </>
@@ -41,7 +53,7 @@ function TodoForm(props) {
                     <input
                         placeholder='Adicionar Tarefa'
                         value={input}
-                        name='NomeTarefa'
+                        name='text'
                         className='todo-input'
                         onChange={event => { setInput(event.target.value) }}
                     />
