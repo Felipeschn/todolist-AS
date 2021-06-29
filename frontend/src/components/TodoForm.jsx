@@ -4,12 +4,13 @@ import Api from '../api.js';
 function TodoForm(props) {
     const [input, setInput] = useState("");
 
-    const user = ('1');
-
     const addTarefa = () => {
         Api.post("/Tarefas", {
-            NomeTarefa: input,
-            FkIdUser: user,
+            nomeTarefa: input,
+            dataTarefa: new Date(),
+            concluido: false,
+            importancia: 0,
+            fkIdUser: 1
         }).then(() => {
             console.log("sucesso");
         });
@@ -31,7 +32,7 @@ function TodoForm(props) {
                     <input
                         placeholder='Atualizar Tarefa'
                         value={input}
-                        name='text'
+                        name='NomeTarefa'
                         className='todo-input edit'
                         onChange={(event) => { setInput(event.target.value) }}
                     />
@@ -44,7 +45,7 @@ function TodoForm(props) {
                     <input
                         placeholder='Adicionar Tarefa'
                         value={input}
-                        name='text'
+                        name='NomeTarefa'
                         className='todo-input'
                         onChange={(event) => { setInput(event.target.value) }}
                     />
