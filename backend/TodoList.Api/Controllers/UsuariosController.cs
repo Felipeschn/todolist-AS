@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using TodoList.Domain.Interfaces.Repositorios;
 
 namespace TodoList.Api.Controllers
 {
+    [EnableCors("AllowOrigin")]
     [ApiController]
     [Route("[controller]")]
     public class UsuariosController : ControllerBase
