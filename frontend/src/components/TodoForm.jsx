@@ -1,41 +1,45 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
+import Axios from 'axios';
 
 function TodoForm(props) {
-    const [input, setInput] = useState(props.edit ? props.edit.value : '');
+    const [input, setInput] = useState("");
+    const user = '1'
 
-    const inputRef = useRef(null);
-
-    useEffect(() => {
-        inputRef.current.focus();
-    });
-
-    const handleChange = e => {
-        setInput(e.target.value);
+    const addTarefa = () => {
+        Axios.post("https://localhost:5001/Tarefas", {
+            nomeTarefa: input,
+            fkIdUser: user
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
     };
 
-    const handleSubmit = e => {
-        e.preventDefault();
-
-        props.onSubmit({
-            id: Math.floor(Math.random() * 10000),
-            text: input
+    const alteraTarefa = () => {
+        Axios.post("http://localhost:3001/alteraTarefa", {
+            id: props.edit.id,
+            nomeTarefa: input
+        }).then(() => {
+            console.log("Alterado com Sucesso")
         });
-        setInput('');
     };
+
 
     return (
-        <form onSubmit={handleSubmit} className='todo-form'>
+        <form className='todo-form'>
             {props.edit ? (
                 <>
                     <input
                         placeholder='Atualizar Tarefa'
                         value={input}
-                        onChange={handleChange}
-                        name='text'
-                        ref={inputRef}
+                        onChange={(event) => setInput(event.target.value)}
+                        name='nomeTarefa'
                         className='todo-input edit'
                     />
-                    <button onClick={handleSubmit} className='todo-button edit'>
+                    <button onClick={alteraTarefa} className='todo-button edit'>
                         Atualizar
                     </button>
                 </>
@@ -44,13 +48,12 @@ function TodoForm(props) {
                     <input
                         placeholder='Adicionar Tarefa'
                         value={input}
-                        onChange={handleChange}
-                        name='text'
+                        onChange={(event) => setInput(event.target.value)}
+                        name='nomeTarefa'
                         className='todo-input'
-                        ref={inputRef}
                     />
 
-                    <button onClick={handleSubmit} className='todo-button'>
+                    <button onClick={addTarefa} className='todo-button'>
                         <i className="fa fa-plus-circle" style={{ fontSize: '20px' }} />
                     </button>
                 </>

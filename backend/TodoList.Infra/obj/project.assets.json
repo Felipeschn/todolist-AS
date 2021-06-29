@@ -977,19 +977,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Felipe\\.nuget\\packages\\": {}
+    "C:\\Users\\lucas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\tarefas.io\\backend\\TodoList.Infra\\TodoList.Infra.csproj",
+      "projectUniqueName": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Infra\\TodoList.Infra.csproj",
       "projectName": "TodoList.Infra",
-      "projectPath": "C:\\tarefas.io\\backend\\TodoList.Infra\\TodoList.Infra.csproj",
-      "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
-      "outputPath": "C:\\tarefas.io\\backend\\TodoList.Infra\\obj\\",
+      "projectPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Infra\\TodoList.Infra.csproj",
+      "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Infra\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1003,8 +1003,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj": {
-              "projectPath": "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj"
+            "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj": {
+              "projectPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj"
             }
           }
         }
@@ -1043,7 +1043,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\tarefas.io\\backend\\TodoList.Api\\TodoList.Api.csproj": {}
+    "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Api\\TodoList.Api.csproj": {}
   },
   "projects": {
-    "C:\\tarefas.io\\backend\\TodoList.Api\\TodoList.Api.csproj": {
+    "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Api\\TodoList.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\tarefas.io\\backend\\TodoList.Api\\TodoList.Api.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Api\\TodoList.Api.csproj",
         "projectName": "TodoList.Api",
-        "projectPath": "C:\\tarefas.io\\backend\\TodoList.Api\\TodoList.Api.csproj",
-        "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
-        "outputPath": "C:\\tarefas.io\\backend\\TodoList.Api\\obj\\",
+        "projectPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Api\\TodoList.Api.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\tarefas.io\\backend\\TodoList.Infra\\TodoList.Infra.csproj": {
-                "projectPath": "C:\\tarefas.io\\backend\\TodoList.Infra\\TodoList.Infra.csproj"
+              "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Infra\\TodoList.Infra.csproj": {
+                "projectPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Infra\\TodoList.Infra.csproj"
               }
             }
           }
@@ -67,21 +67,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj": {
+    "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj",
         "projectName": "TodoList.Domain",
-        "projectPath": "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj",
-        "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
-        "outputPath": "C:\\tarefas.io\\backend\\TodoList.Domain\\obj\\",
+        "projectPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -127,21 +127,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\tarefas.io\\backend\\TodoList.Infra\\TodoList.Infra.csproj": {
+    "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Infra\\TodoList.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\tarefas.io\\backend\\TodoList.Infra\\TodoList.Infra.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Infra\\TodoList.Infra.csproj",
         "projectName": "TodoList.Infra",
-        "projectPath": "C:\\tarefas.io\\backend\\TodoList.Infra\\TodoList.Infra.csproj",
-        "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
-        "outputPath": "C:\\tarefas.io\\backend\\TodoList.Infra\\obj\\",
+        "projectPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Infra\\TodoList.Infra.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -155,8 +155,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj": {
-                "projectPath": "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj"
+              "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj": {
+                "projectPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj"
               }
             }
           }
@@ -195,7 +195,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

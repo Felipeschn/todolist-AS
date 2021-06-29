@@ -22,3 +22,15 @@ C:\tarefas.io\backend\TodoList.Infra\obj\Debug\netcoreapp3.1\TodoList.Infra.cspr
 C:\tarefas.io\backend\TodoList.Infra\obj\Debug\netcoreapp3.1\TodoList.Infra.csproj.CopyComplete
 C:\tarefas.io\backend\TodoList.Infra\obj\Debug\netcoreapp3.1\TodoList.Infra.dll
 C:\tarefas.io\backend\TodoList.Infra\obj\Debug\netcoreapp3.1\TodoList.Infra.pdb
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\bin\Debug\netcoreapp3.1\TodoList.Infra.deps.json
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\bin\Debug\netcoreapp3.1\TodoList.Infra.dll
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\bin\Debug\netcoreapp3.1\TodoList.Infra.pdb
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\bin\Debug\netcoreapp3.1\TodoList.Domain.dll
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\bin\Debug\netcoreapp3.1\TodoList.Domain.pdb
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\obj\Debug\netcoreapp3.1\TodoList.Infra.csproj.AssemblyReference.cache
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\obj\Debug\netcoreapp3.1\TodoList.Infra.AssemblyInfoInputs.cache
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\obj\Debug\netcoreapp3.1\TodoList.Infra.AssemblyInfo.cs
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\obj\Debug\netcoreapp3.1\TodoList.Infra.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\obj\Debug\netcoreapp3.1\TodoList.Infra.csproj.CopyComplete
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\obj\Debug\netcoreapp3.1\TodoList.Infra.dll
+C:\Users\lucas\Documents\ULBRA\6 Semestre\DOAC\TODO LIST\todolist-AS\backend\TodoList.Infra\obj\Debug\netcoreapp3.1\TodoList.Infra.pdb
