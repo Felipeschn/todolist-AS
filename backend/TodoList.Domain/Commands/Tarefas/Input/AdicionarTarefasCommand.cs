@@ -11,7 +11,9 @@ namespace TodoList.Domain.Commands.Tarefas.Input
         public string NomeTarefa { get; set; }
         public DateTime DataTarefa { get; set; }
         public bool Concluido { get; set; }
+        public int Importancia { get; set; }
         public long FkIdUser { get; set; }
+
 
         public bool ValidarCommand()
         {

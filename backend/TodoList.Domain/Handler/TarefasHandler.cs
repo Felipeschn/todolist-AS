@@ -31,9 +31,10 @@ namespace TodoList.Domain.Handler
                 string nomeTarefa = command.NomeTarefa;
                 DateTime DataTarefa = command.DataTarefa;
                 bool concluido = command.Concluido;
+                int importancia = command.Importancia;
                 long fkIdUser = command.FkIdUser;
 
-                TbTarefas tarefa = new TbTarefas(0, nomeTarefa, DataTarefa, concluido, fkIdUser);
+                TbTarefas tarefa = new TbTarefas(0, nomeTarefa, DataTarefa, concluido, importancia, fkIdUser);
 
                 id = repositorio.Inserir(tarefa);
 
@@ -43,8 +44,9 @@ namespace TodoList.Domain.Handler
                     NomeTarefa = tarefa.NomeTarefa,
                     DataTarefa = tarefa.DataTarefa,
                     Concluido = tarefa.Concluido,
+                    Importancia = tarefa.Importancia,
                     FkIdUser = tarefa.FkIdUser
-                });
+                }); ;
 
                 return retorno;
             }
@@ -71,9 +73,10 @@ namespace TodoList.Domain.Handler
                 string nomeTarefa = command.NomeTarefa;
                 DateTime dataTarefa = command.DataTarefa;
                 bool concluido = command.Concluido;
+                int importancia = command.Importancia;
                 long fkIdUser = command.FkIdUser;
 
-                TbTarefas tarefa = new TbTarefas(pkCodTarefa, nomeTarefa, dataTarefa, concluido, fkIdUser);
+                TbTarefas tarefa = new TbTarefas(pkCodTarefa, nomeTarefa, dataTarefa, concluido, importancia, fkIdUser);
 
                 repositorio.Alterar(tarefa);
 
@@ -83,6 +86,7 @@ namespace TodoList.Domain.Handler
                     NomeTarefa = tarefa.NomeTarefa,
                     DataTarefa = tarefa.DataTarefa,
                     Concluido = tarefa.Concluido,
+                    Importancia = tarefa.Importancia,
                     FkIdUser = tarefa.FkIdUser
                 });
 
