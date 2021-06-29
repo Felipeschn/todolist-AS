@@ -46,7 +46,12 @@ namespace TodoList.Api
             services.AddTransient<UsuariosHandler, UsuariosHandler>();
 
             #endregion
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
             #region [+] Swagger
+
             services.AddSwaggerGen(c =>
             {
                 c.DescribeAllParametersInCamelCase();
