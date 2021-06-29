@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
+import Axios from 'axios';
 
 
 import { Tabs, Tab } from 'react-bootstrap';
@@ -8,60 +9,25 @@ import { Tabs, Tab } from 'react-bootstrap';
 function TodoList() {
   const [todos, setTodos] = useState([]);
 
-  const addTodo = todo => {
-    if (!todo.text || /^\s*$/.test(todo.text)) {
-      return;
-    }
-
-    const newTodos = [todo, ...todos];
-
-    setTodos(newTodos);
-    console.log(...todos);
-  };
-
-  const updateTodo = (todoId, newValue) => {
-    if (!newValue.text || /^\s*$/.test(newValue.text)) {
-      return;
-    }
-
-    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
-  };
-
-  const removeTodo = id => {
-    const removedArr = [...todos].filter(todo => todo.id !== id);
-
-    setTodos(removedArr);
-  };
-
-  const completeTodo = id => {
-    let updatedTodos = todos.map(todo => {
-      if (todo.id === id) {
-        todo.isComplete = !todo.isComplete;
-      }
-      return todo;
+  useEffect(() => {
+    Axios.get("http://localhost:5001/Tarefas").then((response) => {
+      setTodos(response.data)
     });
-    setTodos(updatedTodos);
-  };
+  }, [])
 
   return (
     <>
       <Tabs animation={true} id="controlled-tab" style={{ marginBottom: 10 }}>
         <Tab eventKey="tarefas" title="Tarefas" className="Tab">
           <h1>Qual sua tarefa para hoje?</h1>
-          <TodoForm onSubmit={addTodo} />
+          <TodoForm />
           <Todo
             todos={todos}
-            completeTodo={completeTodo}
-            removeTodo={removeTodo}
-            updateTodo={updateTodo}
           />
         </Tab>
         <Tab eventKey="historico" title="Historico">
           <Todo
             todos={todos}
-            completeTodo={completeTodo}
-            removeTodo={removeTodo}
-            updateTodo={updateTodo}
           />
         </Tab>
       </Tabs>
