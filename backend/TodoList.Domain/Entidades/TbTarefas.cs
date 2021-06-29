@@ -10,16 +10,14 @@ namespace TodoList.Domain.Entidades
         public string NomeTarefa { get; private set; }
         public DateTime DataTarefa { get; private set; }
         public bool Concluido { get; private set; }
-        public long FkImportancia { get; private set; }
         public long FkIdUser { get; private set; }
 
-        public TbTarefas(long pkCodTarefa, string nomeTarefa, DateTime dataTarefa, bool concluido, long fkImportancia, long fkIdUser)
+        public TbTarefas(long pkCodTarefa, string nomeTarefa, DateTime dataTarefa, bool concluido, long fkIdUser)
         {
             PkCodTarefa = pkCodTarefa;
             NomeTarefa = nomeTarefa;
             DataTarefa = dataTarefa;
             Concluido = concluido;
-            FkImportancia = fkImportancia;
             FkIdUser = fkIdUser;
         }
     }

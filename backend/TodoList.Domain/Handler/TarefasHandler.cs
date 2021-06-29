@@ -31,10 +31,9 @@ namespace TodoList.Domain.Handler
                 string nomeTarefa = command.NomeTarefa;
                 DateTime DataTarefa = command.DataTarefa;
                 bool concluido = command.Concluido;
-                long fkImportancia = command.FkImportancia;
                 long fkIdUser = command.FkIdUser;
 
-                TbTarefas tarefa = new TbTarefas(0, nomeTarefa, DataTarefa, concluido, fkImportancia, fkIdUser);
+                TbTarefas tarefa = new TbTarefas(0, nomeTarefa, DataTarefa, concluido, fkIdUser);
 
                 id = repositorio.Inserir(tarefa);
 
@@ -44,7 +43,6 @@ namespace TodoList.Domain.Handler
                     NomeTarefa = tarefa.NomeTarefa,
                     DataTarefa = tarefa.DataTarefa,
                     Concluido = tarefa.Concluido,
-                    FkImportancia = tarefa.FkImportancia,
                     FkIdUser = tarefa.FkIdUser
                 });
 
@@ -73,21 +71,19 @@ namespace TodoList.Domain.Handler
                 string nomeTarefa = command.NomeTarefa;
                 DateTime dataTarefa = command.DataTarefa;
                 bool concluido = command.Concluido;
-                long fkImportancia = command.FkImportancia;
                 long fkIdUser = command.FkIdUser;
 
-                TbTarefas tarefa = new TbTarefas(pkCodTarefa, nomeTarefa, dataTarefa, concluido, fkImportancia, fkIdUser);
+                TbTarefas tarefa = new TbTarefas(pkCodTarefa, nomeTarefa, dataTarefa, concluido, fkIdUser);
 
                 repositorio.Alterar(tarefa);
 
                 var retorno = new AtualizarTarefasCommandResult(true, "Tarefa atualizada com sucesso", new
                 {
-                    Id = tarefa.PkCodTarefa,
-                    Nome = tarefa.NomeTarefa,
-                    Autor = tarefa.DataTarefa,
-                    Edicao = tarefa.Concluido,
-                    Isbn = tarefa.FkImportancia,
-                    Imagem = tarefa.FkIdUser
+                    PkCodTarefa = tarefa.PkCodTarefa,
+                    NomeTarefa = tarefa.NomeTarefa,
+                    DataTarefa = tarefa.DataTarefa,
+                    Concluido = tarefa.Concluido,
+                    FkIdUser = tarefa.FkIdUser
                 });
 
                 return retorno;

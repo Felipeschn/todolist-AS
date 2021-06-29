@@ -37,7 +37,6 @@ namespace TodoList.Infra.Repositorios
                 param.Add("@DataTarefa", tarefa.DataTarefa);
                 param.Add("@Concluido", tarefa.Concluido);
                 param.Add("@FkIdUser", tarefa.FkIdUser);
-                param.Add("@FkImportancia", tarefa.FkImportancia);
 
                 return context.Connection.ExecuteScalar<long>(TarefasQueries.SALVAR, param);
             }
@@ -70,7 +69,6 @@ namespace TodoList.Infra.Repositorios
                 param.Add("@DataTarefa", tarefa.DataTarefa);
                 param.Add("@Concluido", tarefa.Concluido);
                 param.Add("@FkIdUser", tarefa.FkIdUser);
-                param.Add("@FkImportancia", tarefa.FkImportancia);
 
                 context.Connection.Execute(TarefasQueries.ATUALIZAR, param);
             }

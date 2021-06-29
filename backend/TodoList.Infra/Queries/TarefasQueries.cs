@@ -12,7 +12,6 @@ namespace TodoList.Infra.Queries
                 `tbtarefas`.`NomeTarefa`,
                 `tbtarefas`.`DataTarefa`,
                 `tbtarefas`.`Concluido`,
-                `tbtarefas`.`FkImportancia`,
                 `tbtarefas`.`FkIdUser`
             FROM 
                 `todolist`.`tbtarefas`;
@@ -24,7 +23,6 @@ namespace TodoList.Infra.Queries
                 `tbtarefas`.`NomeTarefa`,
                 `tbtarefas`.`DataTarefa`,
                 `tbtarefas`.`Concluido`,
-                `tbtarefas`.`FkImportancia`,
                 `tbtarefas`.`FkIdUser`
             FROM 
                 `todolist`.`tbtarefas`
@@ -37,13 +35,11 @@ namespace TodoList.Infra.Queries
                             (`NomeTarefa`,
                             `DataTarefa`,
                             `Concluido`,
-                            `FkImportancia`,
                             `FkIdUser`)
              VALUES
                             (@NomeTarefa,
                             @DataTarefa,
                             @Concluido,
-                            @FkImportancia,
                             @FkIdUser);
         ";
 
@@ -53,7 +49,6 @@ namespace TodoList.Infra.Queries
                     `NomeTarefa` = @NomeTarefa,
                     `DataTarefa` = @DataTarefa,
                     `Concluido` = @Concluido,
-                    `FkImportancia` = @FkImportancia,
                     `FkIdUser` = @FkIdUser
                 WHERE `PkCodTarefa` = @PkCodTarefa;
         ";

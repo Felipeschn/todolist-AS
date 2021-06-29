@@ -43,7 +43,7 @@ namespace TodoList.Api.Controllers
         }
 
         [HttpPut]
-        [Route("v1/livros/{id}")]
+        [Route("v1/tarefa/{id}")]
         public ICommandResult PutAsync(long id, [FromBody] AtualizarTarefasCommand command)
         {
             command.PkCodTarefa = id;
@@ -51,7 +51,7 @@ namespace TodoList.Api.Controllers
         }
 
         [HttpDelete]
-        [Route("v1/livros/{id}")]
+        [Route("v1/tarefa/{id}")]
         public ICommandResult LivroApagar(long id)
         {
             ApagarTarefasCommand command = new ApagarTarefasCommand() { PkCodTarefa = id };

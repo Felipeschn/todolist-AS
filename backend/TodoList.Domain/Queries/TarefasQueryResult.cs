@@ -10,7 +10,6 @@ namespace TodoList.Domain.Queries
         public string NomeTarefa { get; set; }
         public DateTime DataTarefa { get; set; }
         public bool Concluido { get; set; }
-        public long FkImportancia { get; set; }
         public long FkIdUser { get; set; }
     }
 }
