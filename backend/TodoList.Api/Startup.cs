@@ -46,10 +46,14 @@ namespace TodoList.Api
             services.AddTransient<UsuariosHandler, UsuariosHandler>();
 
             #endregion
+
+            #region [+] Allow-Orgin
             services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
             });
+            #endregion
+
             #region [+] Swagger
 
             services.AddSwaggerGen(c =>
@@ -91,6 +95,8 @@ namespace TodoList.Api
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {
