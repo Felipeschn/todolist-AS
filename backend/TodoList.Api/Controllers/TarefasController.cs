@@ -11,7 +11,6 @@ using TodoList.Domain.Interfaces.Repositorios;
 
 namespace TodoList.Api.Controllers
 {
-    [EnableCors("AllowOrigin")]
     [ApiController]
     [Route("[controller]")]
     public class TarefasController : ControllerBase

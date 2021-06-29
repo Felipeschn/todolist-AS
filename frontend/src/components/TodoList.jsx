@@ -10,6 +10,7 @@ function TodoList() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
+    console.log('entrou');
     Api.get("/Tarefas").then((response) => {
       setTodos(response.data)
     });

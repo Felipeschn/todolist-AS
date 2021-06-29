@@ -4,24 +4,20 @@ import Api from '../api.js';
 function TodoForm(props) {
     const [input, setInput] = useState("");
 
-    const addTarefa = () => {
-        Api.post("/Tarefas", {
+    const addTarefa = async () => {
+        await Api.post("/Tarefas", {
             nomeTarefa: input,
-            dataTarefa: new Date(),
+            dataTarefa: '2021-06-29',
             concluido: false,
             importancia: 0,
             fkIdUser: 1
-        }).then(() => {
-            console.log("sucesso");
         });
     };
 
-    const alteraTarefa = () => {
-        Api.put("/Tarefas", {
+    const alteraTarefa = async () => {
+        await Api.put("/Tarefas", {
             id: props.edit.id,
             NomeTarefa: input,
-        }).then(() => {
-            console.log("Alterado com Sucesso")
         });
     };
 
@@ -34,7 +30,7 @@ function TodoForm(props) {
                         value={input}
                         name='NomeTarefa'
                         className='todo-input edit'
-                        onChange={(event) => { setInput(event.target.value) }}
+                        onChange={event => { setInput(event.target.value) }}
                     />
                     <button onClick={alteraTarefa} className='todo-button edit'>
                         Atualizar
@@ -47,7 +43,7 @@ function TodoForm(props) {
                         value={input}
                         name='NomeTarefa'
                         className='todo-input'
-                        onChange={(event) => { setInput(event.target.value) }}
+                        onChange={event => { setInput(event.target.value) }}
                     />
 
                     <button onClick={addTarefa} className='todo-button'>
