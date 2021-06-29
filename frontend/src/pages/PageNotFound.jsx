@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header.jsx';
+//import Header from '../components/Header.jsx';
 import Img from '../img/img2.jpg';
 import Footer from '../components/Footer.jsx';
 
@@ -14,13 +14,11 @@ export const PageNotFound = () => {
                 <p id="titulo_chamada"><b style={{ color: 'red' }}>Error 404.</b></p>
                 <p id="titulo_texto">Esta página não existe ou foi removida.</p>
                 <button className='button-comecar'>
-                    <Link to="/home" style={{ textDecoration: 'none' }}>
+                    <Link to="/" style={{ textDecoration: 'none' }}>
                         Página principal
                     </Link>
                 </button>
             </div>
-
-            <Header />
             <Footer />
         </>
     )

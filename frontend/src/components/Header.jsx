@@ -7,6 +7,7 @@ import '../css/NavBar.css'
 const Header = ({ openModalLogin, closeModalLogin }) => {
     const [openModal, setOpenModal] = useState(false);
     const [sidebar, setSidebar] = useState(false);
+
     useEffect(() => {
         if (openModalLogin) {
             setOpenModal(true)
@@ -28,6 +29,7 @@ const Header = ({ openModalLogin, closeModalLogin }) => {
                     open={openModal}
                     handleClose={() => {
                         setOpenModal(false);
+                        closeModalLogin();
                     }}
                 />
             ) : (

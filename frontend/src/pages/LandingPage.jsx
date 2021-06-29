@@ -26,7 +26,6 @@ export const LandingPage = () => {
                     setOpenModal(false);
                 }}
             />
-
             <Footer />
         </>
     )
