@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oJ3CjnxQiPywSVl0XAYwmt9cdb0FkoLv4eFpNAdhS6sK//rqU069cv6lNCYBKOYLou6eKBhF2lKDsvi73QkBiA==",
+  "dgSpecHash": "D3WmvrJ6LVAF6YfUu2TT6+LX+xvgXIZr1rnBYJDAGf7Z/3li5UazCmfyP1Kl1upIQyCGEvdAtQoAjJ4qS+tsDw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj",
+  "projectFilePath": "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\lucas\\.nuget\\packages\\flunt\\2.0.3\\flunt.2.0.3.nupkg.sha512"
+    "C:\\Users\\Felipe\\.nuget\\packages\\flunt\\2.0.3\\flunt.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj": {}
+    "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj": {
+    "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj",
+        "projectUniqueName": "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj",
         "projectName": "TodoList.Domain",
-        "projectPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\TodoList.Domain.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas\\Documents\\ULBRA\\6 Semestre\\DOAC\\TODO LIST\\todolist-AS\\backend\\TodoList.Domain\\obj\\",
+        "projectPath": "C:\\tarefas.io\\backend\\TodoList.Domain\\TodoList.Domain.csproj",
+        "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
+        "outputPath": "C:\\tarefas.io\\backend\\TodoList.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
