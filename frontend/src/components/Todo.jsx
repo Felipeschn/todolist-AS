@@ -27,7 +27,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
             key={index}
         >
             <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-                {todo.text}
+                {todo.nomeTarefa}
             </div>
             <div className='icons'>
                 <RiCheckboxCircleFill
@@ -35,10 +35,9 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
                     className='concluido-icon'
                 />
                 <TiEdit
-                    onClick={() => setEdit({ id: todo.id, value: todo.text })}
+                    onClick={() => setEdit({ id: todo.id, value: todo.nomeTarefa })}
                     className='edit-icon'
                 />
-
             </div>
         </div>
     ));
