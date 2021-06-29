@@ -12,7 +12,7 @@ namespace TodoList.Domain.Interfaces.Repositorios
         void Deletar(long id);
         Task<IEnumerable<TarefasQueryResult>> ListarAsync();
         long Inserir(TbTarefas tarefa);
-        Task<TarefasQueryResult> ObterPorIdAsync(int id);
+        Task<TarefasQueryResult> ObterPorDataAsync(DateTime data);
         bool CheckId(long id);
         void Alterar(TbTarefas tarefa);
     }

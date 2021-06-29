@@ -36,12 +36,14 @@ namespace TodoList.Api
             #region [+] Repositories 
 
             services.AddTransient<ITarefasRepositorio, TarefasRepositorio>();
+            services.AddTransient<IUsuariosRepositorio, UsuariosRepositorio>();
 
             #endregion
 
             #region [+] Handlers 
 
             services.AddTransient<TarefasHandler, TarefasHandler>();
+            services.AddTransient<UsuariosHandler, UsuariosHandler>();
 
             #endregion
             #region [+] Swagger

@@ -57,5 +57,18 @@ namespace TodoList.Infra.Queries
             DELETE FROM `todolist`.`tbtarefas`
             WHERE `PkCodTarefa` = @PkCodTarefa;
         ";
+
+        public const string LISTARPORDATA = @"
+            SELECT 
+                `tbtarefas`.`PkCodTarefa`,
+                `tbtarefas`.`NomeTarefa`,
+                `tbtarefas`.`DataTarefa`,
+                `tbtarefas`.`Concluido`,
+                `tbtarefas`.`FkIdUser`
+            FROM 
+                `todolist`.`tbtarefas`
+            WHERE
+                `tbtarefas`.`DataTarefa` = @data ;
+        ";
     }
 }

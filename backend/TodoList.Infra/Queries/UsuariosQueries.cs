@@ -8,17 +8,17 @@ namespace TodoList.Infra.Queries
     {
         public const string BUSCARPOREMAILESENHA = @"
             SELECT 
-                `tbtarefas`.`PkIdUser`,
-                `tbtarefas`.`Nome`,
-                `tbtarefas`.`Datanasc`,
-                `tbtarefas`.`Email`,
-                `tbtarefas`.`Senha`
+                `tbusuarios`.`PkIdUser`,
+                `tbusuarios`.`Nome`,
+                `tbusuarios`.`Datanasc`,
+                `tbusuarios`.`Email`,
+                `tbusuarios`.`Senha`
             FROM 
                 `todolist`.`tbusuarios`
             WHERE
-                `tbtarefas`.`Email` = @email
+                `tbusuarios`.`Email` = @email
             and
-                `tbtarefas`.`Senha` = @senha;
+                `tbusuarios`.`Senha` = @senha;
         ";
 
         public const string SALVAR = @"

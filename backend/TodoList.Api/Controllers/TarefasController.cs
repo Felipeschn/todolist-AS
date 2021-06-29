@@ -29,10 +29,10 @@ namespace TodoList.Api.Controllers
         }
 
         [HttpGet]
-        [Route("{id}")]
-        public async Task<IActionResult> ObterTarefaPorIdAsync(int id)
+        [Route("{data}")]
+        public async Task<IActionResult> ObterTarefaPorDataAsync(DateTime data)
         {
-            return Ok(await repositorio.ObterPorIdAsync(id));
+            return Ok(await repositorio.ObterPorDataAsync(data));
         }
 
         [HttpPost]
