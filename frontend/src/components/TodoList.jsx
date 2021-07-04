@@ -2,25 +2,28 @@ import React, { useState, useEffect } from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
 import Api from '../api.js';
-import { pegaUsuarioLogado } from '../services/usuarioLogado';
+import {
+  pegaUsuarioLogado
+} from "../services/usuarioLogado.js";
 
+var user = pegaUsuarioLogado();
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
-  const [usuarioLogado, setUsuarioLogado] = useState();
-
-  function pegaUser() {
-    setUsuarioLogado(pegaUsuarioLogado());
-  }
+  var todo = [];
 
   useEffect(() => {
-    pegaUser();
-    Api.get("/Tarefas/").then((response) => {
-      setTodos(response.data)
+    user = pegaUsuarioLogado();
+    Api.get(`/Tarefas/${user.pkIdUser}/buscar-por-usuario`).then((response) => {
+      Object.keys(response.data).forEach((key) => {
+        if (response.data[key].concluido === false) {
+          todo[key] = response.data[key];
+        }
+      });
+      console.log(todo)
+      setTodos(todo)
     });
   }, [])
-
-  console.log(usuarioLogado);
 
   return (
     <>
@@ -29,7 +32,6 @@ function TodoList() {
       <Todo
         todos={todos}
       />
-
     </>
   );
 }

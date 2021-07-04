@@ -1,7 +1,6 @@
 import { Pie } from 'react-chartjs-2';
 import React, { Component } from 'react';
 
-
 class Chart extends Component {
     constructor(props) {
         super(props);

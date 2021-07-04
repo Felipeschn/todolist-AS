@@ -4,6 +4,13 @@ import { RiCheckboxCircleFill } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 import Api from '../api.js';
 
+import {
+    pegaUsuarioLogado
+} from "../services/usuarioLogado.js";
+
+var user = pegaUsuarioLogado();
+
+
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     const [edit, setEdit] = useState({
         id: null,
@@ -15,10 +22,14 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     }
 
     const concluiTarefa = (todo) => {
-        Api.post("/Tarefa", {
-            id: todo.PkCodTarefa,
-        }).then(() => {
-            console.log("Alterado com Sucesso")
+        Api.put(`/Tarefas/${todo.pkCodTarefa}/editar-tarefa`, {
+            nomeTarefa: todo.nomeTarefa,
+            dataTarefa: new Date(),
+            concluido: true,
+            importancia: 0,
+            fkIdUser: user.pkIdUser
+        }).then((re) => {
+            console.log(re);
         });
     };
 

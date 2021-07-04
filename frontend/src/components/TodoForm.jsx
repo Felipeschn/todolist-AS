@@ -1,29 +1,31 @@
 import React, { useState } from 'react';
 import Api from '../api.js';
+import {
+    pegaUsuarioLogado
+} from "../services/usuarioLogado.js";
 
+const user = pegaUsuarioLogado();
 
 function TodoForm(props) {
     const [input, setInput] = useState("");
 
-
-
     const addTarefa = async () => {
-        await Api.post("/Tarefas", {
+        await Api.post(`/Tarefas`, {
             nomeTarefa: input,
             dataTarefa: new Date(),
             concluido: false,
             importancia: 0,
-            fkIdUser: 1
+            fkIdUser: user.pkIdUser
         });
     };
 
     const alteraTarefa = async (id) => {
-        await Api.put(`/Tarefas/v1/tarefa/${id}`, {
+        await Api.put(`/Tarefas/${id}/editar-tarefa`, {
             nomeTarefa: input,
             dataTarefa: new Date(),
             concluido: false,
             importancia: 0,
-            fkIdUser: 1
+            fkIdUser: user.pkIdUser
         }).then((re) => {
             console.log(re);
         });

@@ -20,7 +20,7 @@ const Login = ({ open, handleClose }) => {
     //   setTimeout(() => setErros(), 5000);
     //   return;
     // }
-    window.localStorage.setItem("usuarioLogado", JSON.stringify(response));
+    window.localStorage.setItem("usuarioLogado", JSON.stringify(response.data[0]));
     history.push("/home");
     handleClose();
   }

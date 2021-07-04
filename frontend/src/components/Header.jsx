@@ -5,16 +5,20 @@ import { SideBarData } from "./SideBarData.jsx";
 import "../css/NavBar.css";
 import {
   verificaSePossuiUsuarioLogado,
-  deslogar,
+  deslogar, pegaUsuarioLogado
 } from "../services/usuarioLogado.js";
 
 const Header = ({ openModalLogin, closeModalLogin }) => {
   const [openModal, setOpenModal] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   const [usuarioJaLogado, setUsuarioJaLogado] = useState(false);
+  const [usuario, setUsuario] = useState("");
+
+
 
   useEffect(() => {
     setUsuarioJaLogado(verificaSePossuiUsuarioLogado());
+    setUsuario(pegaUsuarioLogado());
   }, [usuarioJaLogado, openModal]);
 
   useEffect(() => {
@@ -53,9 +57,13 @@ const Header = ({ openModalLogin, closeModalLogin }) => {
         <div className="container">
           {usuarioJaLogado ? (
             <>
-              <div>
+              <div className="menuTitulo">
                 <Link to="#" className="menu-bars">
                   <i className="fa fa-bars" onClick={showSidebar} />
+                </Link>
+
+                <Link to="/home" style={{ textDecoration: "none" }}>
+                  <h1 className="logo">Tarefas.io</h1>
                 </Link>
               </div>
               <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
@@ -77,21 +85,23 @@ const Header = ({ openModalLogin, closeModalLogin }) => {
                   })}
                 </ul>
               </nav>
-              <Link to="/home" style={{ textDecoration: "none" }}>
-                <h1 className="logo">Tarefas.io</h1>
-              </Link>
-              <Link
-                to="/"
-                className="btn btn-danger"
-                style={{ textDecoration: "none" }}
-              >
-                <button
-                  className="btn btn-danger-inside"
-                  onClick={handleLogOut}
+
+              <div>
+                <span>Olá, {usuario.nome}</span>
+                <Link
+                  to="/"
+                  className="btn btn-danger"
+                  style={{ textDecoration: "none" }}
                 >
-                  Sair
-                </button>
-              </Link>
+                  <button
+                    className="btn btn-danger-inside"
+                    onClick={handleLogOut}
+                  >
+                    Sair
+                  </button>
+                </Link>
+              </div>
+
             </>
           ) : (
             <>
