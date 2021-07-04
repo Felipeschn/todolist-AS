@@ -26,8 +26,11 @@ namespace TodoList.Infra.Repositorios
         public async Task<IEnumerable<TarefasQueryResult>> ListarAsync() => 
             await context.Connection.QueryAsync<TarefasQueryResult>(TarefasQueries.LISTAR);
 
-        public async Task<TarefasQueryResult> ObterPorDataAsync(DateTime data) =>
-            await context.Connection.QueryFirstOrDefaultAsync<TarefasQueryResult>(TarefasQueries.LISTARPORDATA, new { data });
+        public async Task<IEnumerable<TarefasQueryResult>> ObterPorDataAsync(DateTime data) =>
+            await context.Connection.QueryAsync<TarefasQueryResult>(TarefasQueries.LISTARPORDATA, new { data });
+
+        public async Task<IEnumerable<TarefasQueryResult>> ObterPorUsuarioAsync(long id) =>
+            await context.Connection.QueryAsync<TarefasQueryResult>(TarefasQueries.LISTARPORUSERID, new { id });
 
         public long Inserir(TbTarefas tarefa)
         {

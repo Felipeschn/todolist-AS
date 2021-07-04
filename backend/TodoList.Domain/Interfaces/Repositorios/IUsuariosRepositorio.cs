@@ -10,6 +10,6 @@ namespace TodoList.Domain.Interfaces.Repositorios
     public interface IUsuariosRepositorio
     {
         long Inserir(TbUsuarios usuario);
-        Task<UsuariosQueryResult> ObterPorEmailESenhaAsync(string email, string senha);
+        Task<IEnumerable<UsuariosQueryResult>> ObterPorEmailESenhaAsync(string email, string senha);
     }
 }

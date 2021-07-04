@@ -30,10 +30,17 @@ namespace TodoList.Api.Controllers
         }
 
         [HttpGet]
-        [Route("{data}")]
+        [Route("{data}/buscar-por-data")]
         public async Task<IActionResult> ObterTarefaPorDataAsync(DateTime data)
         {
             return Ok(await repositorio.ObterPorDataAsync(data));
+        }
+
+        [HttpGet]
+        [Route("{id}/buscar-por-usuario")]
+        public async Task<IActionResult> ObterTarefaPorUsuarioAsync(long id)
+        {
+            return Ok(await repositorio.ObterPorUsuarioAsync(id));
         }
 
         [HttpPost]
@@ -44,7 +51,7 @@ namespace TodoList.Api.Controllers
         }
 
         [HttpPut]
-        [Route("v1/tarefa/{id}")]
+        [Route("{id}/editar-tarefa")]
         public ICommandResult PutAsync(long id, [FromBody] AtualizarTarefasCommand command)
         {
             command.PkCodTarefa = id;
@@ -52,7 +59,7 @@ namespace TodoList.Api.Controllers
         }
 
         [HttpDelete]
-        [Route("v1/tarefa/{id}")]
+        [Route("{id}/deletar-tarefa")]
         public ICommandResult LivroApagar(long id)
         {
             ApagarTarefasCommand command = new ApagarTarefasCommand() { PkCodTarefa = id };

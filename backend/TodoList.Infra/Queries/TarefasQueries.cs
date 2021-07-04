@@ -32,6 +32,20 @@ namespace TodoList.Infra.Queries
                 `tbtarefas`.`PkCodTarefa` = @id ;
         ";
 
+        public const string LISTARPORUSERID = @"
+            SELECT 
+                `tbtarefas`.`PkCodTarefa`,
+                `tbtarefas`.`NomeTarefa`,
+                `tbtarefas`.`DataTarefa`,
+                `tbtarefas`.`Concluido`,
+                `tbtarefas`.`Importancia`,
+                `tbtarefas`.`FkIdUser`
+            FROM 
+                `todolist`.`tbtarefas`
+            WHERE
+                `tbtarefas`.`FkIdUser` = @id ;
+        ";
+
         public const string SALVAR = @"
             INSERT INTO `todolist`.`tbtarefas`
                             (`NomeTarefa`,

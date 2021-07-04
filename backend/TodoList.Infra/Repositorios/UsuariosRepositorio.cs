@@ -23,9 +23,9 @@ namespace TodoList.Infra.Repositorios
             this.context = context;
         }
 
-        public async Task<UsuariosQueryResult> ObterPorEmailESenhaAsync(string email, string senha) =>
+        public async Task<IEnumerable<UsuariosQueryResult>> ObterPorEmailESenhaAsync(string email, string senha) =>
             await context.Connection
-            .QueryFirstOrDefaultAsync<UsuariosQueryResult>(UsuariosQueries.BUSCARPOREMAILESENHA, new { email, senha });
+            .QueryAsync<UsuariosQueryResult>(UsuariosQueries.BUSCARPOREMAILESENHA, new { email, senha });
 
         public long Inserir(TbUsuarios usuario)
         {
