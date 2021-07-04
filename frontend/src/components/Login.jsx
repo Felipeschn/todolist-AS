@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import api from "../api";
 import { Tabs, Tab, Modal } from "react-bootstrap";
 import { useHistory } from "react-router";
-import _ from "lodash";
 
 const Login = ({ open, handleClose }) => {
-  const [emailLogin, setEmailLogin] = useState("");
-  const [senha, setSenha] = useState("");
+  const [emailLogin, setEmailLogin] = useState('');
+  const [senha, setSenha] = useState('');
   const [erros, setErros] = useState([]);
   const history = useHistory();
 
@@ -14,31 +13,29 @@ const Login = ({ open, handleClose }) => {
     e.preventDefault();
     const response = await api.get(`/Usuarios/${emailLogin}/${senha}`);
     console.log(response);
-    //arrumar isso
-    // if (_.isEmpty(response)) {
-    //   setErros(['Usuário ou senha incorreta!']);
-    //   setTimeout(() => setErros(), 5000);
-    //   return;
-    // }
-    window.localStorage.setItem("usuarioLogado", JSON.stringify(response.data[0]));
+    if (response.data.length === 0) {
+      setErros(['Usuário ou senha incorreta!']);
+      return;
+    }
+    window.localStorage.setItem("usuarioLogado", JSON.stringify(response));
     history.push("/home");
     handleClose();
   }
 
-  const [nome, setNome] = useState("");
-  const [dataNascimento, setDataNascimento] = useState("");
-  const [emailRegister, setEmailRegister] = useState("");
-  const [senhaRegister, setSenhaRegister] = useState("");
+  const [nome, setNome] = useState('');
+  const [dataNascimento, setDataNascimento] = useState('');
+  const [emailRegister, setEmailRegister] = useState('');
+  const [senhaRegister, setSenhaRegister] = useState('');
 
   async function handleSubmitRegister(e) {
     e.preventDefault();
-    const response = await api.post("/Usuarios", {
+    await api.post("/Usuarios", {
       nome: nome,
       datanasc: dataNascimento,
       email: emailRegister,
       senha: senhaRegister,
     });
-    console.log(response);
+    history.push("/");
     handleClose();
   }
 
@@ -50,8 +47,8 @@ const Login = ({ open, handleClose }) => {
             <br />
             {erros.map((erro) => {
               return (
-                <div key={erro} className="row col-xs-12">
-                  <div className="alert alert-danger col-xs-12 col-md-6 col-md-offset-3 centered">
+                <div key={erro} className="row col-xs-12" style={{ paddingLeft: '120px' }}>
+                  <div className="alert alert-danger col-xs-12 col-md-8 col-md-offset-3 centered">
                     {erro}
                   </div>
                 </div>
