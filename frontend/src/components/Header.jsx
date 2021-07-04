@@ -1,79 +1,110 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import Login from './Login.jsx';
-import { Link } from 'react-router-dom';
-import { SideBarData } from './SideBarData.jsx';
-import '../css/NavBar.css'
+import React, { useState, useCallback, useEffect } from "react";
+import Login from "./Login.jsx";
+import { Link } from "react-router-dom";
+import { SideBarData } from "./SideBarData.jsx";
+import "../css/NavBar.css";
+import {
+  verificaSePossuiUsuarioLogado,
+  deslogar,
+} from "../services/usuarioLogado.js";
 
 const Header = ({ openModalLogin, closeModalLogin }) => {
-    const [openModal, setOpenModal] = useState(false);
-    const [sidebar, setSidebar] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
+  const [usuarioJaLogado, setUsuarioJaLogado] = useState(false);
 
-    useEffect(() => {
-        if (openModalLogin) {
-            setOpenModal(true)
-        } else {
-            setOpenModal(false)
-        }
-    }, [openModalLogin])
+  useEffect(() => {
+    setUsuarioJaLogado(verificaSePossuiUsuarioLogado());
+  }, [usuarioJaLogado, openModal]);
 
-    const handleOpenModal = useCallback(() => {
-        setOpenModal(true);
-    }, [setOpenModal]);
+  useEffect(() => {
+    if (openModalLogin) {
+      setOpenModal(true);
+    } else {
+      setOpenModal(false);
+    }
+  }, [openModalLogin]);
 
-    const showSidebar = () => setSidebar(!sidebar);
+  const handleOpenModal = useCallback(() => {
+    setOpenModal(true);
+  }, [setOpenModal]);
 
-    return (
-        <>
-            {openModal ? (
-                <Login
-                    open={openModal}
-                    handleClose={() => {
-                        setOpenModal(false);
-                        closeModalLogin();
-                    }}
-                />
-            ) : (
-                ''
-            )}
+  const handleLogOut = () => {
+    deslogar();
+    setUsuarioJaLogado(false);
+  };
 
-            <div className="NavBar">
-                <div className="container">
-                    <div>
-                        <Link to="#" className="menu-bars">
-                            <i className="fa fa-bars" onClick={showSidebar} />
-                        </Link>
-                    </div>
-                    <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                        <ul className="nav-menu-items" onClick={showSidebar}>
-                            <li className="navbar-toggle">
-                                <Link to="#" className="menu-bars">
-                                    <i className="fa fa-times" aria-hidden="true" />
-                                </Link>
-                            </li>
-                            {SideBarData.map((item, index) => {
-                                return (
-                                    <li key={index} className={item.cName}>
-                                        <Link to={item.path}>
-                                            {item.icon}
-                                            <span>{item.title}</span>
-                                        </Link>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </nav>
+  const showSidebar = () => setSidebar(!sidebar);
 
-
-                    <Link to="/home" style={{ textDecoration: 'none' }}>
-                        <h1 className="logo">Tarefas.io</h1>
+  return (
+    <>
+      {openModal ? (
+        <Login
+          open={openModal}
+          handleClose={() => {
+            setOpenModal(false);
+            closeModalLogin();
+          }}
+        />
+      ) : (
+        ""
+      )}
+      <div className="NavBar">
+        <div className="container">
+          {usuarioJaLogado ? (
+            <>
+              <div>
+                <Link to="#" className="menu-bars">
+                  <i className="fa fa-bars" onClick={showSidebar} />
+                </Link>
+              </div>
+              <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+                <ul className="nav-menu-items" onClick={showSidebar}>
+                  <li className="navbar-toggle">
+                    <Link to="#" className="menu-bars">
+                      <i className="fa fa-times" aria-hidden="true" />
                     </Link>
-
-                    <button className='btn btn-light' onClick={handleOpenModal}>Login</button>
-                </div>
-
-            </div>
-        </>
-    );
+                  </li>
+                  {SideBarData.map((item, index) => {
+                    return (
+                      <li key={index} className={item.cName}>
+                        <Link to={item.path}>
+                          {item.icon}
+                          <span>{item.title}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+              <Link to="/home" style={{ textDecoration: "none" }}>
+                <h1 className="logo">Tarefas.io</h1>
+              </Link>
+              <Link
+                to="/"
+                className="btn btn-danger"
+                style={{ textDecoration: "none" }}
+              >
+                <button
+                  className="btn btn-danger-inside"
+                  onClick={handleLogOut}
+                >
+                  Sair
+                </button>
+              </Link>
+            </>
+          ) : (
+            <>
+              <h1 className="logo">Tarefas.io</h1>
+              <button className="btn btn-light" onClick={handleOpenModal}>
+                Login
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Header;
