@@ -33,7 +33,7 @@ export const MinhaConta = () => {
                 </div>
                 <div>
                     <h1>Data de nascimento</h1>
-                    <span>{user.dataNasc}</span>
+                    <span>{new Date(user.dataNasc).toLocaleDateString()}</span>
                 </div>
                 <h1>Estatisticas das Tarefas</h1>
                 <div className="board">

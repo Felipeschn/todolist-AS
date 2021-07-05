@@ -1,6 +1,7 @@
 export function pegaUsuarioLogado() {
     if (window.localStorage.length > 0) {
-        return JSON.parse(window.localStorage.getItem('usuarioLogado'));
+        let retorno = JSON.parse(window.localStorage.getItem('usuarioLogado'));
+        return retorno.data[0];
     }
     return false;
 }

@@ -10,10 +10,9 @@ var user = pegaUsuarioLogado();
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
-  var todo = [];
 
   useEffect(() => {
-    user = pegaUsuarioLogado();
+    var todo = [];
     Api.get(`/Tarefas/${user.pkIdUser}/buscar-por-usuario`).then((response) => {
       Object.keys(response.data).forEach((key) => {
         if (response.data[key].concluido === false) {

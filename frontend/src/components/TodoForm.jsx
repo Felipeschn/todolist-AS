@@ -12,7 +12,7 @@ function TodoForm(props) {
     const addTarefa = async () => {
         await Api.post(`/Tarefas`, {
             nomeTarefa: input,
-            dataTarefa: new Date(),
+            dataTarefa: new Date().toLocaleDateString(),
             concluido: false,
             importancia: 0,
             fkIdUser: user.pkIdUser
@@ -22,7 +22,7 @@ function TodoForm(props) {
     const alteraTarefa = async (id) => {
         await Api.put(`/Tarefas/${id}/editar-tarefa`, {
             nomeTarefa: input,
-            dataTarefa: new Date(),
+            dataTarefa: new Date().toLocaleDateString(),
             concluido: false,
             importancia: 0,
             fkIdUser: user.pkIdUser
