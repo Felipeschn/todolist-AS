@@ -36,4 +36,4 @@ Esse projeto foi produzido para Avaliação Semestral da Disciplina de Desenvolv
 
 ---
 
-Feito pelos os Alunos: Andreo Naymayer, Eduardo Solka, Felipe Melo, Jader Silva, Lucas Braga.
+Feito pelos Alunos: Felipe Melo e Lucas Braga.
